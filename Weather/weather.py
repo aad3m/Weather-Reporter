@@ -3,7 +3,7 @@ print('Welcome to the weather reporter!')
 
 # Get data from openweathermap.org
 def get_weather_data(api_key, city):
-    base_url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}'
+    base_url = f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={api_key}' # website can be changed 
     response = requests.get(base_url)
 
     # Checks if able to connect to weather data
@@ -14,7 +14,7 @@ def get_weather_data(api_key, city):
         return None
 
 
-# convert speed to user decided unit
+# convert speed to user-decided unit
 def convert_speed(value, unit):
     if unit == 'Miles':
         return value * 2.23694, 'mph'
@@ -23,7 +23,7 @@ def convert_speed(value, unit):
     else:
         return value, unit
 
-# convert visibility to user decided unit
+# convert visibility to user-decided unit
 def convert_visibility(value, unit):
     if unit == 'Miles':
         value = value * 0.000621371
@@ -34,7 +34,7 @@ def convert_visibility(value, unit):
     return value, unit
 
 
-# convert temp to user decided unit
+# convert temp to user-decided unit
 def convert_temperature(value, unit):
     if unit == 'Fahrenheit':
         return (value - 273.15) * 9 / 5 + 32, 'F'
@@ -75,7 +75,7 @@ def display_weather_info(city, weather_data, user_units, user_temp):
 
 
 # Running code:
-API_KEY = '19fc96ed1a1daebe000e661170eff8d6'
+API_KEY = '19fc96ed1a1daebe000e661170eff8d6' # User can you personal API
 city = input('Enter a city name: ')
 user_units = input('Miles or Kilo: ')
 user_units = user_units.title()
